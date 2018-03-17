@@ -100,28 +100,28 @@
 
 
   
-  <meta name="keywords" content="html," />
+  <meta name="keywords" content="jsonp," />
 
 
-<meta name="description" content="Property每一个DOM节点都是一个HTMLElement对象，像其它js对象一样，可以添加一些自定义的方法和属性。这些方法和属性就是Property。它只能被js读取，且不会影响HTML的渲染。 Attribute与Property不同，Attribute会在DOM节点上显示出来，但不可以在DOM对象中通过for-in遍历出来。">
-<meta name="keywords" content="html">
+<meta name="description" content="为什么可以跨域请求?首先jsonp请求不是xhr请求，其实是浏览器请求了一个文件（不会存在跨域问题），在请求的url中携带参数，当服务端收到这个请求时 通过url上的参数查询DB，用url中的callback包裹data，返回给前端，因此前端接收到的数据是这个样子的：">
+<meta name="keywords" content="jsonp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Attribute与Property">
-<meta property="og:url" content="http://lore-w.com/2017/06/15/Attr-Prop/index.html">
+<meta property="og:title" content="jsonp为什么可以跨域请求?">
+<meta property="og:url" content="http://lore-w.com/2017/08/16/About-jsonp/index.html">
 <meta property="og:site_name" content="W&#39;s Notes">
-<meta property="og:description" content="Property每一个DOM节点都是一个HTMLElement对象，像其它js对象一样，可以添加一些自定义的方法和属性。这些方法和属性就是Property。它只能被js读取，且不会影响HTML的渲染。 Attribute与Property不同，Attribute会在DOM节点上显示出来，但不可以在DOM对象中通过for-in遍历出来。">
+<meta property="og:description" content="为什么可以跨域请求?首先jsonp请求不是xhr请求，其实是浏览器请求了一个文件（不会存在跨域问题），在请求的url中携带参数，当服务端收到这个请求时 通过url上的参数查询DB，用url中的callback包裹data，返回给前端，因此前端接收到的数据是这个样子的：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-16T16:23:44.108Z">
+<meta property="og:updated_time" content="2018-03-17T14:44:20.680Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Attribute与Property">
-<meta name="twitter:description" content="Property每一个DOM节点都是一个HTMLElement对象，像其它js对象一样，可以添加一些自定义的方法和属性。这些方法和属性就是Property。它只能被js读取，且不会影响HTML的渲染。 Attribute与Property不同，Attribute会在DOM节点上显示出来，但不可以在DOM对象中通过for-in遍历出来。">
+<meta name="twitter:title" content="jsonp为什么可以跨域请求?">
+<meta name="twitter:description" content="为什么可以跨域请求?首先jsonp请求不是xhr请求，其实是浏览器请求了一个文件（不会存在跨域问题），在请求的url中携带参数，当服务端收到这个请求时 通过url上的参数查询DB，用url中的callback包裹data，返回给前端，因此前端接收到的数据是这个样子的：">
 
 
 
 
 
 
-  <link rel="canonical" href="http://lore-w.com/2017/06/15/Attr-Prop/"/>
+  <link rel="canonical" href="http://lore-w.com/2017/08/16/About-jsonp/"/>
 
 
 
@@ -130,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>Attribute与Property | W's Notes</title>
+  <title>jsonp为什么可以跨域请求? | W's Notes</title>
   
 
 
@@ -286,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2017/06/15/Attr-Prop/">
+    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2017/08/16/About-jsonp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lore-w">
@@ -303,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Attribute与Property</h1>
+          <h1 class="post-title" itemprop="name headline">jsonp为什么可以跨域请求?</h1>
         
 
         <div class="post-meta">
@@ -315,7 +315,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-15T20:12:56+08:00">2017-06-15</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-16T23:40:08+08:00">2017-08-16</time>
             
 
             
@@ -336,7 +336,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/手记/" itemprop="url" rel="index"><span itemprop="name">手记</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/挖、草稿/" itemprop="url" rel="index"><span itemprop="name">挖、草稿</span></a></span>
 
                 
                 
@@ -370,40 +370,47 @@
       
 
       
-        <h1 id="Property"><a href="#Property" class="headerlink" title="Property"></a>Property</h1><p>每一个DOM节点都是一个<code>HTMLElement</code>对象，像其它js对象一样，可以添加一些自定义的<em>方法和属性</em>。这些<em>方法和属性</em>就是Property。它只能被js读取，且不会影响HTML的渲染。</p>
-<h1 id="Attribute"><a href="#Attribute" class="headerlink" title="Attribute"></a>Attribute</h1><p>与Property不同，Attribute会在DOM节点上显示出来，但不可以在DOM对象中通过<code>for-in</code><em>遍历</em>出来。</p>
+        <h1 id="为什么可以跨域请求"><a href="#为什么可以跨域请求" class="headerlink" title="为什么可以跨域请求?"></a>为什么可以跨域请求?</h1><p>首先jsonp请求不是xhr请求，其实是浏览器请求了一个文件（不会存在跨域问题），在请求的url中携带参数，当服务端收到这个请求时</p>
+<p>通过url上的参数查询DB，用url中的callback包裹data，返回给前端，因此前端接收到的数据是这个样子的：</p>
 <a id="more"></a>
-<h1 id="有什么区别？"><a href="#有什么区别？" class="headerlink" title="有什么区别？"></a>有什么区别？</h1><table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Attribute</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>值可以任意类型</td>
-<td>值只能是字符串</td>
-</tr>
-<tr>
-<td>键名区分大小写</td>
-<td>键名不区分大小写</td>
-</tr>
-<tr>
-<td>在<code>innerHTML</code>里面不可见</td>
-<td>在innerHTML里面可见</td>
-</tr>
-</tbody>
-</table>
-<h1 id="Attribute与Property之间的同步"><a href="#Attribute与Property之间的同步" class="headerlink" title="Attribute与Property之间的同步"></a>Attribute与Property之间的同步</h1><p>的DOM节点对象，都有一套<strong>标准</strong>的(自定义的不会)<code>Properties</code> 。这些DOM对象的标准<code>Properties</code>，会自动与其<code>Attributes</code>同步，但只能从<code>Attribute</code>单向同步到<code>Property</code></p>
-<h1 id="关于Vue中的Property"><a href="#关于Vue中的Property" class="headerlink" title="关于Vue中的Property"></a>关于Vue中的Property</h1><p>在Vuejs的v-bind指令中有一个<code>.prop</code>修饰符。<a href="https://cn.vuejs.org/v2/api/#v-bind" target="_blank" rel="noopener">这里</a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">:widgetName.prop</span>=<span class="string">"widgetName"</span>&gt;</span>&#123;&#123;widgetName&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data () &#123;</span><br><span class="line">    widgetName: <span class="string">'Hello'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>渲染的html为:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在没有<code>.prop</code>修饰符的情况下，渲染的html为:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">widgetname</span>=<span class="string">"Hello"</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxxcallback(&#123;<span class="attr">key</span>: value&#125;)</span><br></pre></td></tr></table></figure>
+<p>同时，前端在发送请求的时候就在window对象下定义了一个xxxcallback的方法，大概是这个样子的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.xxxcallback(data) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样其实就相当于，相当于什么…不说了…</p>
+<h2 id="window对象污染问题"><a href="#window对象污染问题" class="headerlink" title="window对象污染问题"></a>window对象污染问题</h2><p>  通过上面的思考可以知道，多次请求以後，window对象上其实会有多个callback，因此，我们还得有一个销毁得过程</p>
+<h1 id="jq中如何使用"><a href="#jq中如何使用" class="headerlink" title="jq中如何使用"></a>jq中如何使用</h1><p>在jq中使用jsonp跨域请求非常简单，只需在options参数中配置：</p>
+<p><code>jsonp: jsonpCallback</code>即可</p>
+<p>注意：这里的jsonpCallback是一个回调函数的名称，你可以定义成任何一个你喜欢的名字，如abc，noCallback等等等…</p>
+<h1 id="vue-resource中如何使用"><a href="#vue-resource中如何使用" class="headerlink" title="vue-resource中如何使用"></a>vue-resource中如何使用</h1><blockquote class="blockquote-center"><p>等一下…我们得尊重一下服务端得同学 </p>
+</blockquote>
+<p>关于jsonp的请求，服务端提供的接口可能有如下两种形式：</p>
+<ul>
+<li>1、<code>xxxapi/user.do?userId=user_1&amp;callback=callback</code></li>
+<li>2、<code>xxxapi/user/{userId}-{callback}.html</code></li>
+</ul>
+<p>以上接口最主要得区别，其实就是服务端获取callback的方式不同</p>
+<p>第一种，通过key value，获取callback</p>
+<p>第二种，通过正则，字符串截取，获取callback</p>
+<p><strong>问题来了：</strong></p>
+<p><strong>在</strong>前端，第一种方式的callback传递，基本都有框架内部随机生成，因此每次请求的url其实都不一样</p>
+<p><strong>而</strong>，第二种方式的callback传递，基本都有开发者拼接url而成，如果不做随机处理，每次请求的url其实都一样，缓存问题是显而易见的</p>
+<p><strong>也</strong>，为第二种接口在连续请求的情况下出现xxxCallback is not defined给出了合理的解释，（结合window对象污染问题，很容易得到答案…）</p>
+<p>有了上面的基础，可以开始表演了</p>
+<h2 id="对于第一种，我们可以这么写"><a href="#对于第一种，我们可以这么写" class="headerlink" title="对于第一种，我们可以这么写"></a>对于第一种，我们可以这么写</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Vue.http.jsonp(<span class="string">"xxxapi/user.do"</span>, &#123;</span><br><span class="line">  params: &#123;</span><br><span class="line">    userId: user_1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>这时vue-resource会解析params中的参数，并生成一个随机的callback，拼接到url後面，</p>
+<p>如(<code>xxxapi/user.do?userId=user_1&amp;callback=_jsonpv4d5xxae</code>)</p>
+<h2 id="对于第二种，其实是需要自定义回调的接口"><a href="#对于第二种，其实是需要自定义回调的接口" class="headerlink" title="对于第二种，其实是需要自定义回调的接口"></a>对于第二种，其实是需要自定义回调的接口</h2><p>在官方的文档中，并没有找到自定义callback的方法，网上大多是说需要自定义<code>jsonp</code>参数，我试了并不可以，可能是版本的问题吧，</p>
+<p><em>最後在源码</em>(vue-resource/src/http/client/jsonp.js)中找到了答案：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = request.jsonp || <span class="string">'callback'</span>,</span><br><span class="line">  callback = request.jsonpCallback || <span class="string">'_jsonp'</span> + <span class="built_in">Math</span>.random().toString(<span class="number">36</span>).substr(<span class="number">2</span>),</span><br><span class="line">  body = <span class="literal">null</span>,</span><br><span class="line">  handler,</span><br><span class="line">  script;</span><br></pre></td></tr></table></figure>
+<p>通过上述代码可以知道vue-resource中自定义callback的参数为jsonpCallback</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.http.jsonp(<span class="string">"xxxapi/user/user_1-customCallback.html"</span>, &#123;</span><br><span class="line">  jsonpCallback: <span class="string">'customCallback'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>不过这里大家需要注意的是：</p>
+<p>Url（xxxapi/user/user_1-customCallback.html）中的customCallback</p>
+<p>和配置项（{jsonpCallback: ‘customCallback’}）中的customCallback作用是不同的，</p>
+<p>Url中的customCallback是通知服务端用这个callback包裹data</p>
+<p>而配置项中的customCallback是通知vue-resource在window下定义一个方法</p>
+<blockquote class="blockquote-center"><p>转载请注明出处(┬＿┬) </p>
+</blockquote>
       
     </div>
 
@@ -423,7 +430,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/html/" rel="tag"># html</a>
+            <a href="/tags/jsonp/" rel="tag"># jsonp</a>
           
         </div>
       
@@ -436,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/27/iphone.rem/" rel="next" title="iPhone & Rem">
-                <i class="fa fa-chevron-left"></i> iPhone & Rem
+              <a href="/2017/08/16/Object-c/" rel="next" title="Object-c">
+                <i class="fa fa-chevron-left"></i> Object-c
               </a>
             
           </div>
@@ -446,8 +453,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/21/Webpack-dev-M/" rel="prev" title="WEBPACK-DEV-MIDDLEWARE简述">
-                WEBPACK-DEV-MIDDLEWARE简述 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/16/Sprites/" rel="prev" title="CSS Sprites">
+                CSS Sprites <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -634,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Property"><span class="nav-number">1.</span> <span class="nav-text">Property</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Attribute"><span class="nav-number">2.</span> <span class="nav-text">Attribute</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有什么区别？"><span class="nav-number">3.</span> <span class="nav-text">有什么区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Attribute与Property之间的同步"><span class="nav-number">4.</span> <span class="nav-text">Attribute与Property之间的同步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于Vue中的Property"><span class="nav-number">5.</span> <span class="nav-text">关于Vue中的Property</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么可以跨域请求"><span class="nav-number">1.</span> <span class="nav-text">为什么可以跨域请求?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#window对象污染问题"><span class="nav-number">1.1.</span> <span class="nav-text">window对象污染问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jq中如何使用"><span class="nav-number">2.</span> <span class="nav-text">jq中如何使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-resource中如何使用"><span class="nav-number">3.</span> <span class="nav-text">vue-resource中如何使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对于第一种，我们可以这么写"><span class="nav-number">3.1.</span> <span class="nav-text">对于第一种，我们可以这么写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对于第二种，其实是需要自定义回调的接口"><span class="nav-number">3.2.</span> <span class="nav-text">对于第二种，其实是需要自定义回调的接口</span></a></li></ol></li></ol></div>
             
 
           </div>
