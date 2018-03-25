@@ -103,18 +103,18 @@
   <meta name="keywords" content="nginx," />
 
 
-<meta name="description" content="LOG_FORMAT语法规则12345# log_format 是配置的关键字 name 是配置的名字(一个变量)Systax: log_format name [escape=default|json] string ...;Default: log_format combined &quot;...&quot;;# 只能配置在http模块下Context: http">
+<meta name="description" content="语法规则12345# log_format 是配置的关键字 name 是配置的名字(一个变量)Systax: log_format name [escape=default|json] string ...;Default: log_format combined &quot;...&quot;;# 只能配置在http模块下Context: http">
 <meta name="keywords" content="nginx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx Log Format模块">
+<meta property="og:title" content="Nginx 日志模块">
 <meta property="og:url" content="http://lore-w.com/2018/03/23/Nginx-Log-Format/index.html">
 <meta property="og:site_name" content="W&#39;s Notes">
-<meta property="og:description" content="LOG_FORMAT语法规则12345# log_format 是配置的关键字 name 是配置的名字(一个变量)Systax: log_format name [escape=default|json] string ...;Default: log_format combined &quot;...&quot;;# 只能配置在http模块下Context: http">
+<meta property="og:description" content="语法规则12345# log_format 是配置的关键字 name 是配置的名字(一个变量)Systax: log_format name [escape=default|json] string ...;Default: log_format combined &quot;...&quot;;# 只能配置在http模块下Context: http">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-23T17:19:17.489Z">
+<meta property="og:updated_time" content="2018-03-25T06:07:43.421Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx Log Format模块">
-<meta name="twitter:description" content="LOG_FORMAT语法规则12345# log_format 是配置的关键字 name 是配置的名字(一个变量)Systax: log_format name [escape=default|json] string ...;Default: log_format combined &quot;...&quot;;# 只能配置在http模块下Context: http">
+<meta name="twitter:title" content="Nginx 日志模块">
+<meta name="twitter:description" content="语法规则12345# log_format 是配置的关键字 name 是配置的名字(一个变量)Systax: log_format name [escape=default|json] string ...;Default: log_format combined &quot;...&quot;;# 只能配置在http模块下Context: http">
 
 
 
@@ -130,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>Nginx Log Format模块 | W's Notes</title>
+  <title>Nginx 日志模块 | W's Notes</title>
   
 
 
@@ -235,7 +235,7 @@
         
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">13</span>
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">18</span>
               </a>
         </li>
       
@@ -303,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Nginx Log Format模块</h1>
+          <h1 class="post-title" itemprop="name headline">Nginx 日志模块</h1>
         
 
         <div class="post-meta">
@@ -370,16 +370,16 @@
       
 
       
-        <h1 id="LOG-FORMAT语法规则"><a href="#LOG-FORMAT语法规则" class="headerlink" title="LOG_FORMAT语法规则"></a>LOG_FORMAT语法规则</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># log_format 是配置的关键字 name 是配置的名字(一个变量)</span></span><br><span class="line">Systax: log_format name [escape=default|json] string ...;</span><br><span class="line">Default: log_format combined <span class="string">"..."</span>;</span><br><span class="line"><span class="comment"># 只能配置在http模块下</span></span><br><span class="line">Context: http</span><br></pre></td></tr></table></figure>
+        <h1 id="语法规则"><a href="#语法规则" class="headerlink" title="语法规则"></a>语法规则</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># log_format 是配置的关键字 name 是配置的名字(一个变量)</span></span><br><span class="line">Systax: log_format name [escape=default|json] string ...;</span><br><span class="line">Default: log_format combined <span class="string">"..."</span>;</span><br><span class="line"><span class="comment"># 只能配置在http模块下</span></span><br><span class="line">Context: http</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <hr>
-<p><strong>Systax中的第三个参数是请求变量，有3种</strong></p>
+<p><strong>SYSTAX中的第三个参数是变量</strong></p>
 <h2 id="HTTP请求变量"><a href="#HTTP请求变量" class="headerlink" title="HTTP请求变量"></a>HTTP请求变量</h2><ul>
 <li><code>arg_PARAMETER</code><br><strong>PARAMETER是参数</strong></li>
 <li><code>http_HEADER</code> REQUEST请求里的头信息<br><strong>HEADER是参数</strong></li>
 <li><code>sent_http_HEADER</code> RESPONSE里的头信息<br><strong>HEADER是参数</strong></li>
 </ul>
-<p>举一个例子,现在想在access_log中记录userAgent,如下</p>
+<h1 id="吃个栗子"><a href="#吃个栗子" class="headerlink" title="吃个栗子"></a>吃个栗子</h1><p>现在想在access_log中记录userAgent,如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ curl -v https://lore-w.com &gt;/etc/null</span><br><span class="line"></span><br><span class="line">&gt; GET / HTTP/1.1</span><br><span class="line">&gt; User-Agent: curl/7.29.0 <span class="comment">#### 需要在access_log中记录这个字段</span></span><br><span class="line">&gt; Host: lore-w.com</span><br><span class="line">&gt; Accept: */*</span><br><span class="line">&gt;</span><br><span class="line">&lt; HTTP/1.1 200 OK</span><br><span class="line">&lt; Accept-Ranges: bytes</span><br><span class="line">&lt; Access-Control-Allow-Origin: *</span><br><span class="line">&lt; Cache-Control: max-age=600</span><br><span class="line">&lt; Content-Length: 44514</span><br><span class="line">&lt; Content-Type: text/html; charset=utf-8</span><br><span class="line">&lt; Last-Modified: Sun, 18 Mar 2018 14:07:04 GMT</span><br><span class="line">&lt; Server: Coding Pages</span><br><span class="line">&lt; Vary: Accept-Encoding</span><br><span class="line">&lt; Date: Fri, 23 Mar 2018 15:59:42 GMT</span><br><span class="line">&lt;</span><br></pre></td></tr></table></figure>
 <p>咔咔咔！！！</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /etc/nginx</span><br><span class="line">$ vim nginx.conf</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       /etc/nginx/mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 步骤：</span></span><br><span class="line">    <span class="comment"># 因为要记录的是request里的头信息，因此使用变量http_HEADER</span></span><br><span class="line">    <span class="comment"># 把变量HEADER换成User-Agent</span></span><br><span class="line">    <span class="comment"># 把大写该小些</span></span><br><span class="line">    <span class="comment"># 把中划线改下划线</span></span><br><span class="line">    <span class="comment"># 在http前加$</span></span><br><span class="line">    <span class="comment"># -- 是分隔符</span></span><br><span class="line">    log_format  main  <span class="string">'$http_user_agent -- '</span></span><br><span class="line">                      <span class="string">'$remote_addr - $remote_user [$time_local] "$request" '</span></span><br><span class="line">                      <span class="string">'$status $body_bytes_sent "$http_referer" '</span></span><br><span class="line">                      <span class="string">'$http_user_agent "$http_x_forwarded_for"'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 在上面的log_format中除了单引号，像-- [] "" 都会作为字符串打印在日志里</span></span><br><span class="line">    <span class="comment"># $remote_addr client的地址</span></span><br><span class="line">    <span class="comment"># $remote_user client 请求nginx认证的username 需要认证模块打开</span></span><br><span class="line">    <span class="comment"># $time_local nginx的时间</span></span><br><span class="line">    <span class="comment"># $request request的请求行</span></span><br><span class="line">    <span class="comment"># $status response的状态</span></span><br><span class="line">    <span class="comment"># $body_bytes_sent 服务端响 给client body的大小</span></span><br><span class="line">    <span class="comment"># $http_referer referer 上一级页面是什么</span></span><br><span class="line">    <span class="comment"># $http_x_forwarded_for</span></span><br><span class="line"></span><br><span class="line">    access_log  /var/<span class="built_in">log</span>/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    ...</span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$ wq</span><br><span class="line">...</span><br><span class="line">$ nginx -t -c /etc/nginx/nginx.conf <span class="comment"># 检查配置文件的语法和路径是否正确</span></span><br><span class="line"></span><br><span class="line">nginx: configuration file /etc/nginx/nginx.conf <span class="built_in">test</span> is successful</span><br><span class="line"></span><br><span class="line">$ nginx -s reload -c /etc/nginx/nginx.conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求几次本机</span></span><br><span class="line">$ curl http://127.0.0.1</span><br><span class="line">$ curl http://127.0.0.1</span><br><span class="line">$ curl http://127.0.0.1</span><br><span class="line"></span><br><span class="line">$ tail -f /var/<span class="built_in">log</span>/nginx/access.log</span><br><span class="line"></span><br><span class="line">112.86.218.12 - - [23/Mar/2018:22:50:49 +0800] <span class="string">"GET / HTTP/1.1"</span> 200 612 <span class="string">"-"</span> <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/604.4.7 (KHTML, like Gecko) Version/11.0.2 Safari/604.4.7"</span> <span class="string">"-"</span></span><br><span class="line">112.86.218.12 - - [23/Mar/2018:22:50:49 +0800] <span class="string">"GET /favicon.ico HTTP/1.1"</span> 404 169 <span class="string">"http://47.97.112.40/"</span> <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/604.4.7 (KHTML, like Gecko) Version/11.0.2 Safari/604.4.7"</span> <span class="string">"-"</span></span><br><span class="line">curl/7.29.0 -- 127.0.0.1 - - [24/Mar/2018:00:15:49 +0800] <span class="string">"GET / HTTP/1.1"</span> 200 612 <span class="string">"-"</span> <span class="string">"curl/7.29.0"</span> <span class="string">"-"</span></span><br><span class="line">curl/7.29.0 -- 127.0.0.1 - - [24/Mar/2018:00:15:51 +0800] <span class="string">"GET / HTTP/1.1"</span> 200 612 <span class="string">"-"</span> <span class="string">"curl/7.29.0"</span> <span class="string">"-"</span></span><br><span class="line">curl/7.29.0 -- 127.0.0.1 - - [24/Mar/2018:00:15:52 +0800] <span class="string">"GET / HTTP/1.1"</span> 200 612 <span class="string">"-"</span> <span class="string">"curl/7.29.0"</span> <span class="string">"-"</span></span><br></pre></td></tr></table></figure>
@@ -432,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/23/Nginx-Http/" rel="next" title="Nginx-Http">
-                <i class="fa fa-chevron-left"></i> Nginx-Http
+              <a href="/2018/03/23/Nginx-Http/" rel="next" title="Nginx http基础">
+                <i class="fa fa-chevron-left"></i> Nginx http基础
               </a>
             
           </div>
@@ -441,6 +441,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/24/Nginx-Stub-Status/" rel="prev" title="Nginx 监控模块">
+                Nginx 监控模块 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -518,7 +522,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -628,7 +632,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LOG-FORMAT语法规则"><span class="nav-number">1.</span> <span class="nav-text">LOG_FORMAT语法规则</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP请求变量"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP请求变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-内置变量"><span class="nav-number">1.2.</span> <span class="nav-text">Nginx 内置变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义变量"><span class="nav-number">1.3.</span> <span class="nav-text">自定义变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TAIL"><span class="nav-number">2.</span> <span class="nav-text">TAIL</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#语法规则"><span class="nav-number">1.</span> <span class="nav-text">语法规则</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP请求变量"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP请求变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#吃个栗子"><span class="nav-number">2.</span> <span class="nav-text">吃个栗子</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-内置变量"><span class="nav-number">2.1.</span> <span class="nav-text">Nginx 内置变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义变量"><span class="nav-number">2.2.</span> <span class="nav-text">自定义变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TAIL"><span class="nav-number">3.</span> <span class="nav-text">TAIL</span></a></li></ol></div>
             
 
           </div>
