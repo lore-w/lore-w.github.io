@@ -217,7 +217,7 @@
         
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">22</span>
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">26</span>
               </a>
         </li>
       
@@ -231,7 +231,7 @@
         
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">18</span>
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">24</span>
               </a>
         </li>
       
@@ -282,6 +282,449 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2018/03/19/Nginx-V/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lore-w">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/commons/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="W's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/19/Nginx-V/" itemprop="url">Nginx-V</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T19:11:09+08:00">2018-03-19</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/手记/" itemprop="url" rel="index"><span itemprop="name">手记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="Nginx-V"><a href="#Nginx-V" class="headerlink" title="Nginx -V"></a>Nginx -V</h1><p><strong><em>查看安装编译参数</em></strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">$ nginx -V</span><br><span class="line">nginx version: nginx/1.12.2</span><br><span class="line">built by gcc 4.8.5 20150623 (Red Hat 4.8.5-16) (GCC)</span><br><span class="line">built with OpenSSL 1.0.2k-fips  26 Jan 2017</span><br><span class="line">TLS SNI support enabled</span><br><span class="line"></span><br><span class="line">configure arguments:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Install 目录或路径</span></span><br><span class="line">--prefix=/etc/nginx</span><br><span class="line">--sbin-path=/usr/sbin/nginx</span><br><span class="line">--modules-path=/usr/lib64/nginx/modules</span><br><span class="line">--conf-path=/etc/nginx/nginx.conf</span><br><span class="line">--error-log-path=/var/<span class="built_in">log</span>/nginx/error.log</span><br><span class="line">--http-log-path=/var/<span class="built_in">log</span>/nginx/access.log</span><br><span class="line">--pid-path=/var/run/nginx.pid</span><br><span class="line">--lock-path=/var/run/nginx.lock</span><br><span class="line"><span class="comment"># Install 目录或路径 End</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行相关模块时，Nginx保留的临时性文件</span></span><br><span class="line">--http-client-body-temp-path=/var/cache/nginx/client_temp --http-proxy-temp-path=/var/cache/nginx/proxy_temp</span><br><span class="line">--http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp</span><br><span class="line">--http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp</span><br><span class="line">--http-scgi-temp-path=/var/cache/nginx/scgi_temp</span><br><span class="line"><span class="comment"># 执行相关模块时，Nginx保留的临时性文件 End</span></span><br><span class="line"></span><br><span class="line">--user=nginx</span><br><span class="line">--group=nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用的模块</span></span><br><span class="line">--with-compat</span><br><span class="line">--with-file-aio</span><br><span class="line">--with-threads</span><br><span class="line">--with-http_addition_module</span><br><span class="line">--with-http_auth_request_module</span><br><span class="line">--with-http_dav_module</span><br><span class="line">--with-http_flv_module</span><br><span class="line">--with-http_gunzip_module</span><br><span class="line">--with-http_gzip_static_module</span><br><span class="line">--with-http_mp4_module</span><br><span class="line">--with-http_random_index_module</span><br><span class="line">--with-http_realip_module</span><br><span class="line">--with-http_secure_link_module</span><br><span class="line">--with-http_slice_module</span><br><span class="line">--with-http_ssl_module</span><br><span class="line">--with-http_stub_status_module</span><br><span class="line">--with-http_sub_module</span><br><span class="line">--with-http_v2_module</span><br><span class="line">--with-mail</span><br><span class="line">--with-mail_ssl_module</span><br><span class="line">--with-stream</span><br><span class="line">--with-stream_realip_module</span><br><span class="line">--with-stream_ssl_module</span><br><span class="line">--with-stream_ssl_preread_module</span><br><span class="line"><span class="comment"># 使用的模块 End</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置额外的参数，添加到cflags变量</span></span><br><span class="line">--with-cc-opt=<span class="string">'-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -m64 -mtune=generic -fPIC'</span></span><br><span class="line"><span class="comment"># 设置额外的参数，添加到cflags变量 End</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置附加的参数，链接系统lib</span></span><br><span class="line">--with-ld-opt=<span class="string">'-Wl,-z,relro -Wl,-z,now -pie'</span></span><br><span class="line"><span class="comment"># 设置附加的参数，链接系统lib End</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/19/Nginx-V/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2018/03/18/Nginx-File/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lore-w">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/commons/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="W's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/18/Nginx-File/" itemprop="url">Nginx 目录结构简述</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-18T19:45:23+08:00">2018-03-18</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/手记/" itemprop="url" rel="index"><span itemprop="name">手记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>通过yum的方式安装nginx，其实安装的是一个一个的rpm包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ rpm -ql nginx</span><br><span class="line"></span><br><span class="line">/etc/logrotate.d/nginx</span><br><span class="line">/etc/nginx</span><br><span class="line">/etc/nginx/conf.d</span><br><span class="line">/etc/nginx/conf.d/default.conf</span><br><span class="line">/etc/nginx/fastcgi_params</span><br><span class="line">/etc/nginx/koi-utf</span><br><span class="line">/etc/nginx/koi-win</span><br><span class="line">/etc/nginx/mime.types</span><br><span class="line">/etc/nginx/modules</span><br><span class="line">/etc/nginx/nginx.conf</span><br><span class="line">/etc/nginx/scgi_params</span><br><span class="line">/etc/nginx/uwsgi_params</span><br><span class="line">/etc/nginx/win-utf</span><br><span class="line">/etc/sysconfig/nginx</span><br><span class="line">/etc/sysconfig/nginx-debug</span><br><span class="line">/usr/lib/systemd/system/nginx-debug.service</span><br><span class="line">/usr/lib/systemd/system/nginx.service</span><br><span class="line">/usr/lib64/nginx</span><br><span class="line">/usr/lib64/nginx/modules</span><br><span class="line">/usr/libexec/initscripts/legacy-actions/nginx</span><br><span class="line">/usr/libexec/initscripts/legacy-actions/nginx/check-reload</span><br><span class="line">/usr/libexec/initscripts/legacy-actions/nginx/upgrade</span><br><span class="line">/usr/sbin/nginx</span><br><span class="line">/usr/sbin/nginx-debug</span><br><span class="line">/usr/share/doc/nginx-1.12.2</span><br><span class="line">/usr/share/doc/nginx-1.12.2/COPYRIGHT</span><br><span class="line">/usr/share/man/man8/nginx.8.gz</span><br><span class="line">/usr/share/nginx</span><br><span class="line">/usr/share/nginx/html</span><br><span class="line">/usr/share/nginx/html/50x.html</span><br><span class="line">/usr/share/nginx/html/index.html</span><br><span class="line">/var/cache/nginx</span><br><span class="line">/var/<span class="built_in">log</span>/nginx</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/18/Nginx-File/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2018/03/18/Nginx-Install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lore-w">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/commons/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="W's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/18/Nginx-Install/" itemprop="url">Nginx Install</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-18T13:44:23+08:00">2018-03-18</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/挖、草稿/" itemprop="url" rel="index"><span itemprop="name">挖、草稿</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h1><p>来来来，点这里<br><a href="http://nginx.org/en/linux_packages.html#stable" target="_blank" rel="noopener">Pre-Built Packages</a></p>
+<blockquote>
+<p>To set up the yum repository for RHEL/CentOS,<br>create the file named /etc/yum.repos.d/nginx.repo with the following contents:</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/18/Nginx-Install/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://lore-w.com/2018/03/16/Sprites/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -301,7 +744,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/16/Sprites/" itemprop="url">CSS Sprites</a></h1>
+                <a class="post-title-link" href="/2018/03/16/Sprites/" itemprop="url">CSS SPRITES...甜</a></h1>
         
 
         <div class="post-meta">
@@ -602,7 +1045,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/16/Object-c/" itemprop="url">Object-c</a></h1>
+                <a class="post-title-link" href="/2017/08/16/Object-c/" itemprop="url">一点点O C</a></h1>
         
 
         <div class="post-meta">
@@ -680,6 +1123,179 @@
             </a>
           </div>
           <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2017/08/05/Weex-Toolkit-Install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lore-w">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/commons/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="W's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/05/Weex-Toolkit-Install/" itemprop="url">由Weex-Toolkit引起的权限问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-05T12:30:23+08:00">2017-08-05</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/手记/" itemprop="url" rel="index"><span itemprop="name">手记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>在安装weex-toolkit的时候，出现如下错误</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Failed at the xtoolkit@0.2.7 postinstall script.</span><br></pre></td></tr></table></figure>
+<p>这是由于Mac系统下安装weex-toolkit时<code>~/.xtoolkit</code>权限不足引起的。</p>
+<p>因此，只要<code>cd</code>到该目录下<code>sudo chmod 777 dirName</code>(dirName为需要修改的目录或者文件)就可以了（如果不行的话同样查看<code>/usr/local/lib/node_modules</code>的权限问题）</p>
+<h1 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h1><p>下面开始抄作业解释这个问题</p>
+<p><strong>Unix系统的权限分三种，分别是Owner、Group、Other，用<code>ls -l</code>可以查看文件的权限。</strong></p>
+<p><img src="/images/2017/local-bash.png" alt=""></p>
+<p><em>每个项目前面那一串乱七八糟的字母和横杠，就是权限。第一位比较简单，指的是文件类型：-代表普通文件，d代表文件夹，Unix下文件夹是特殊的文件。后面9位分三组，每组就代表了对应用户的权限：</em></p>
+<p><img src="/images/2017/010.png" alt=""></p>
+<ul>
+<li>r = 4: 读</li>
+<li>w = 2: 写</li>
+<li>x = 1: 执行</li>
+</ul>
+<p><em>现在看一下上面那个图的bin目录，它的权限是drwxr-xr-x就可以解读为：</em></p>
+<ul>
+<li>d: <em>这是个目录</em></li>
+<li>rwx: <em>拥有者（也就是Learning）可读、可写、可执行</em></li>
+<li>r-x: <em>用户组（也就是admin）可读、可执行、但不可写</em></li>
+<li>r-x: <em>其它用户，跟用户组的权限一样</em></li>
+</ul>
+<h3 id="为什么是1、2、4？"><a href="#为什么是1、2、4？" class="headerlink" title="为什么是1、2、4？"></a>为什么是1、2、4？</h3><p>那么权限为什么是1、2、4呢？因为这是二进制：</p>
+<ul>
+<li>1: 001</li>
+<li>2: 010</li>
+<li>4: 100</li>
+</ul>
+<p>这么做最主要有两个好处：节省空间和提升运算效率。</p>
+<p><em>Unix是上个世纪60年代末期产物，当时的资源甚是宝贵，因此，只用3个bit来保存权限，是很不错的选择。当然CPU时间也是很宝贵，不可能为了权限判断让你耗费那么多CPU时间，这种二进制权限适合于位运算，位运算众所周知是最快的。</em></p>
+<p><strong><em>警告：杜绝使用chmod 777，尤其是在生产环境！</em></strong><br><strong><em>谨用：使用不当会破坏系统的权限</em></strong></p>
+<p>参考：</p>
+<p><a href="https://segmentfault.com/a/1190000006246645" target="_blank" rel="noopener">当我们 chmod 777 的时候，干了些什么？</a></p>
+
+          
         
       
     </div>
@@ -878,7 +1494,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2017/06/15/Attr-Prop/">
+    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2017/07/21/Vue-Transition/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lore-w">
@@ -897,7 +1513,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/15/Attr-Prop/" itemprop="url">Attribute与Property</a></h1>
+                <a class="post-title-link" href="/2017/07/21/Vue-Transition/" itemprop="url">Vue Transition</a></h1>
         
 
         <div class="post-meta">
@@ -909,458 +1525,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-15T20:12:56+08:00">2017-06-15</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/手记/" itemprop="url" rel="index"><span itemprop="name">手记</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Property"><a href="#Property" class="headerlink" title="Property"></a>Property</h1><p>每一个DOM节点都是一个<code>HTMLElement</code>对象，像其它js对象一样，可以添加一些自定义的<em>方法和属性</em>。这些<em>方法和属性</em>就是Property。它只能被js读取，且不会影响HTML的渲染。</p>
-<h1 id="Attribute"><a href="#Attribute" class="headerlink" title="Attribute"></a>Attribute</h1><p>与Property不同，Attribute会在DOM节点上显示出来，但不可以在DOM对象中通过<code>for-in</code><em>遍历</em>出来。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/15/Attr-Prop/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2017/02/27/iphone.rem/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lore-w">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/commons/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="W's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/27/iphone.rem/" itemprop="url">iPhone & Rem</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-27T23:02:10+08:00">2017-02-27</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/挖、草稿/" itemprop="url" rel="index"><span itemprop="name">挖、草稿</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="iPhone像素"><a href="#iPhone像素" class="headerlink" title="iPhone像素"></a>iPhone像素</h1><table>
-<thead>
-<tr>
-<th>iPhone</th>
-<th>物理像素</th>
-<th>逻辑像素</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4s</td>
-<td>640/960</td>
-<td>320/480</td>
-</tr>
-<tr>
-<td>5S/C</td>
-<td>640/1136</td>
-<td>320/568</td>
-</tr>
-<tr>
-<td>7</td>
-<td>750/1334</td>
-<td>375/667</td>
-</tr>
-<tr>
-<td>7SP</td>
-<td>1080/1920</td>
-<td>414/736</td>
-</tr>
-</tbody>
-</table>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/27/iphone.rem/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2017/02/21/MAC.KEYMAP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lore-w">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/commons/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="W's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/21/MAC.KEYMAP/" itemprop="url">Mac 快捷键整理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-21T23:00:55+08:00">2017-02-21</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p><strong>斜体</strong> 表示是Mac的系统配置<br><strong>粗体</strong> 表示不是WS的默认配置，需要修改</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/21/MAC.KEYMAP/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2017/01/28/usr.local.bin/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lore-w">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/commons/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="W's Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/01/28/usr.local.bin/" itemprop="url">usr/local/bin</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-28T00:00:00+08:00">2017-01-28</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-21T17:12:56+08:00">2017-07-21</time>
             
 
             
@@ -1417,8 +1582,161 @@
       
         
           
-            <p><img src="/images/2017/usr-local-app.png" alt=""></p>
-<p>That’s all %&gt;_&lt;%…</p>
+            <h1 id="官网demo"><a href="#官网demo" class="headerlink" title="官网demo"></a>官网demo</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"show = !show"</span>&gt;</span></span><br><span class="line">    Toggle</span><br><span class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"fade"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">"show"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#demo'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    show: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.fade-enter-active</span>, <span class="selector-class">.fade-leave-active</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: opacity .<span class="number">5s</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fade-enter</span>, <span class="selector-class">.fade-leave-to</span> <span class="comment">/* .fade-leave-active in &lt;2.1.8 */</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="css3-demo"><a href="#css3-demo" class="headerlink" title="css3 demo"></a>css3 demo</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.normal</span> &#123;</span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">	<span class="attribute">transition</span>: opacity <span class="number">3s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.transition</span> &#123;</span><br><span class="line">	<span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/2017/71500632452_.pic_hd.jpg" alt=""></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>在Vue中v-enter表示动画的开始状态，结合本例表示元素从透明度0过渡到1（元素默认显示，透明度为1）即设定一个初始值过渡到正常值，而在css3中正常情况下元素透明度是1，是从正常值过渡到一个设定值</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2017/07/21/Plupload-Cross-Domain/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lore-w">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/commons/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="W's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/21/Plupload-Cross-Domain/" itemprop="url">Plupload跨域上传</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-21T17:12:56+08:00">2017-07-21</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/手记/" itemprop="url" rel="index"><span itemprop="name">手记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h1><p>Nodejs<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.all(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"xxx"</span>);</span><br><span class="line">  res.header(<span class="string">"Access-Control-Allow-Methods"</span>,<span class="string">"POST,OPTIONS"</span>);</span><br><span class="line">  res.header(<span class="string">"Access-Control-Allow-Credentials"</span>,<span class="literal">true</span>);</span><br><span class="line">  res.header(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"withCredentials"</span>);</span><br><span class="line">  res.header(<span class="string">"Content-Type"</span>, <span class="string">"application/json;charset=utf-8"</span>);</span><br><span class="line">  next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><strong>Cors请求默认不发送cookie和HTTP认证信息。如果要把cookie发到服务器，一方面要服务器同意，指定Access-Control-Allow-Credentials字段。另一方面，必须在AJAX请求中设置withCredentials为true</strong></p>
+<h1 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h1><h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.withCredentials = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="Plupload"><a href="#Plupload" class="headerlink" title="Plupload"></a>Plupload</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> uploader = <span class="keyword">new</span> plupload.Uploader(&#123;</span><br><span class="line">  runtimes : <span class="string">'html5'</span>,</span><br><span class="line">  browse_button : <span class="string">'pickfiles'</span>,</span><br><span class="line">  container: <span class="built_in">document</span>.getElementById(<span class="string">'container'</span>),</span><br><span class="line">  url : <span class="string">'http://xxx/upload'</span>,</span><br><span class="line">  required_features: &#123;</span><br><span class="line">    send_browser_cookies: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener"><em>CORS 详解</em></a></li>
+<li><a href="https://github.com/moxiecode/plupload/pull/1356" target="_blank" rel="noopener"><em>Support withCredentials attribute of XmlHttpRequest</em></a></li>
+</ul>
 
           
         
@@ -1461,7 +1779,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1508,7 +1826,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1582,7 +1900,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
