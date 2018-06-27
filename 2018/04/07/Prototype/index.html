@@ -116,7 +116,7 @@
 <meta property="og:image" content="http://lore-w.com/images/2018/Prototype_03.jpg">
 <meta property="og:image" content="http://lore-w.com/images/2018/Prototype_04.jpg">
 <meta property="og:image" content="http://lore-w.com/images/2018/Prototype_05.jpg">
-<meta property="og:updated_time" content="2018-04-07T07:58:06.612Z">
+<meta property="og:updated_time" content="2018-06-27T08:29:13.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Prototype分析">
 <meta name="twitter:description" content="内存模型先来一点点点代码 1234567891011121314151617// 第一种状态function Person() &amp;#123;&amp;#125;// 第二种状态Person.prototype.name = &apos;Lore-w&apos;Person.prototype.age = 28Person.prototype.say = function () &amp;#123;  alert(this.name)">
@@ -227,21 +227,21 @@
         
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">26</span>
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">28</span>
               </a>
         </li>
       
         
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">2</span>
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">3</span>
               </a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">24</span>
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">26</span>
               </a>
         </li>
       
@@ -379,8 +379,9 @@
         <h1 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a>内存模型</h1><p>先来一点点点代码</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种状态</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 第二种状态</span></span><br><span class="line">Person.prototype.name = <span class="string">'Lore-w'</span></span><br><span class="line">Person.prototype.age = <span class="number">28</span></span><br><span class="line">Person.prototype.say = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 第三种状态</span></span><br><span class="line"><span class="keyword">var</span> lore = <span class="keyword">new</span> Person()</span><br><span class="line">lore.say()</span><br><span class="line">alert(Person.prototype.isPrototypeOf(lore)) <span class="comment">// true</span></span><br><span class="line">alert(<span class="string">'name'</span> <span class="keyword">in</span> lore) <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过window没有办法调用say方法，如此完成了封装</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong><em>原型</em></strong>是js中非常特殊的一个对象，当一个函数创建之後，会随之产生一个<em>原型</em>对象<br>当通过这个函数的构造函数创建一个具体的对象之後，在这个具体的对象中就会有一个<em>属性</em>指向<em>原型</em></p>
+<p><strong><em>原型</em></strong>是js中非常特殊的一个对象，当一个函数创建之後，会随之<em>产生</em>一个<em>原型</em>对象<br>当通过这个函数的构造函数创建一个具体的对象之後，在这个具体的对象中就会有一个<em>属性</em>指向<em>原型</em></p>
 </blockquote>
+<a id="more"></a>
 <p><strong>状态分析</strong></p>
 <h2 id="第一种状态"><a href="#第一种状态" class="headerlink" title="第一种状态"></a>第一种状态</h2><p>当定义<code>function Person() {}</code>的时候</p>
 <blockquote>
@@ -456,6 +457,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/27/keyBy/" rel="prev" title="Lodash keyBy分析">
+                Lodash keyBy分析 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -533,7 +538,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -550,7 +555,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -615,7 +622,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

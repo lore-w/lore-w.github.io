@@ -100,28 +100,28 @@
 
 
   
-  <meta name="keywords" content="nginx," />
+  <meta name="keywords" content="js,lodash," />
 
 
-<meta name="description" content="HTTP 请求 Request包含 请求行、请求头部、请求数据  Response包含 状态行、消息报头、响应正文">
-<meta name="keywords" content="nginx">
+<meta name="description" content="Code123456789101112131415161718function keyBy(collection, iteratee) &amp;#123;  return reduce(collection, (result, value, key) =&amp;gt; (    baseAssignValue(result, iteratee(value), value), result  ), &amp;#123;">
+<meta name="keywords" content="js,lodash">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx http基础">
-<meta property="og:url" content="http://lore-w.com/2018/03/23/Nginx-Http/index.html">
+<meta property="og:title" content="Lodash keyBy分析">
+<meta property="og:url" content="http://lore-w.com/2018/06/27/keyBy/index.html">
 <meta property="og:site_name" content="W&#39;s Notes">
-<meta property="og:description" content="HTTP 请求 Request包含 请求行、请求头部、请求数据  Response包含 状态行、消息报头、响应正文">
+<meta property="og:description" content="Code123456789101112131415161718function keyBy(collection, iteratee) &amp;#123;  return reduce(collection, (result, value, key) =&amp;gt; (    baseAssignValue(result, iteratee(value), value), result  ), &amp;#123;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-25T06:07:57.601Z">
+<meta property="og:updated_time" content="2018-06-27T09:07:45.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx http基础">
-<meta name="twitter:description" content="HTTP 请求 Request包含 请求行、请求头部、请求数据  Response包含 状态行、消息报头、响应正文">
+<meta name="twitter:title" content="Lodash keyBy分析">
+<meta name="twitter:description" content="Code123456789101112131415161718function keyBy(collection, iteratee) &amp;#123;  return reduce(collection, (result, value, key) =&amp;gt; (    baseAssignValue(result, iteratee(value), value), result  ), &amp;#123;">
 
 
 
 
 
 
-  <link rel="canonical" href="http://lore-w.com/2018/03/23/Nginx-Http/"/>
+  <link rel="canonical" href="http://lore-w.com/2018/06/27/keyBy/"/>
 
 
 
@@ -130,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>Nginx http基础 | W's Notes</title>
+  <title>Lodash keyBy分析 | W's Notes</title>
   
 
 
@@ -286,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2018/03/23/Nginx-Http/">
+    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2018/06/27/keyBy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lore-w">
@@ -303,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Nginx http基础</h1>
+          <h1 class="post-title" itemprop="name headline">Lodash keyBy分析</h1>
         
 
         <div class="post-meta">
@@ -315,7 +315,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-23T23:06:31+08:00">2018-03-23</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-27T16:30:16+08:00">2018-06-27</time>
             
 
             
@@ -336,7 +336,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/手记/" itemprop="url" rel="index"><span itemprop="name">手记</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/草稿/" itemprop="url" rel="index"><span itemprop="name">草稿</span></a></span>
 
                 
                 
@@ -370,25 +370,25 @@
       
 
       
-        <h1 id="HTTP-请求"><a href="#HTTP-请求" class="headerlink" title="HTTP 请求"></a>HTTP 请求</h1><ul>
-<li><p>Request<br><em>包含 请求行、请求头部、请求数据</em></p>
-</li>
-<li><p>Response<br><em>包含 状态行、消息报头、响应正文</em></p>
-</li>
-</ul>
+        <h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">keyBy</span>(<span class="params">collection, iteratee</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> reduce(collection, (result, value, key) =&gt; (</span><br><span class="line">    baseAssignValue(result, iteratee(value), value), result</span><br><span class="line">  ), &#123;&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baseAssignValue</span>(<span class="params">object, key, value</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (key == <span class="string">'__proto__'</span>) &#123;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(object, key, &#123;</span><br><span class="line">      <span class="string">'configurable'</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">'enumerable'</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">'value'</span>: value,</span><br><span class="line">      <span class="string">'writable'</span>: <span class="literal">true</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    object[key] = value</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://lore-w.com</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">$ curl -v https://lore-w.com &gt;/dev/null</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">&gt; GET / HTTP/1.1 <span class="comment"># 请求行</span></span><br><span class="line">&gt; User-Agent: curl/7.29.0</span><br><span class="line">&gt; Host: lore-w.com</span><br><span class="line">&gt; Accept: */*</span><br><span class="line">&gt;</span><br><span class="line">&lt; HTTP/1.1 200 OK <span class="comment"># 状态行</span></span><br><span class="line">&lt; Accept-Ranges: bytes</span><br><span class="line">&lt; Access-Control-Allow-Origin: *</span><br><span class="line">&lt; Cache-Control: max-age=600</span><br><span class="line">&lt; Content-Length: 44514</span><br><span class="line">&lt; Content-Type: text/html; charset=utf-8</span><br><span class="line">&lt; Last-Modified: Sun, 18 Mar 2018 14:07:04 GMT</span><br><span class="line">&lt; Server: Coding Pages</span><br><span class="line">&lt; Vary: Accept-Encoding</span><br><span class="line">&lt; Date: Fri, 23 Mar 2018 15:01:19 GMT</span><br><span class="line">&lt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h1 id="CURL"><a href="#CURL" class="headerlink" title="CURL"></a>CURL</h1><p>CURL相当于我们的浏览器，模拟浏览器向服务端发起请求，只不过不能渲染页面</p>
-<ul>
-<li>-v 显示请求详细信息</li>
-<li>-X 指定请求方式<br><code>curl -X GET https://lore-w.com</code><br><code>curl -X POST -d &quot;name=lore&amp;age=27&quot; https://lore-w.com</code><br>由于-d选项为使用POST方式向server发送请求，因此在使用-d的时候，<br>可以省略-X POST。<br>使用-d时，将使用<code>Content-type:application/x-www-form-urlencoded</code>方式发送<br>如果想使用<code>JSON</code>形式，可以使用-H指定头部类型<br><code>curl -H &quot;Content-Type:application/json&quot; -d &#39;{&quot;name&quot;: &quot;lore&quot;}&#39; ...</code><br>如果想在请求的时候带上Cookie，可以这样<br><code>curl -H &quot;Cookie:username=lore-w&quot; ...</code></li>
-<li>-H 增加头部信息</li>
-<li>-cookie直接指定cookie</li>
-<li>-F 表单提交操作<br>通过-F命令来以<code>Content-Type:multipart/form-data</code>的形式向server post数据，该命令允许提交二进制文件等。可以使用@前缀来制定提交的内容为一个文件，也可以使用&lt;符号来提交文件中的内容<br><code>curl -F img=@lore.jpg https://lore-w.com</code></li>
-</ul>
-<h1 id="DEV-NULL"><a href="#DEV-NULL" class="headerlink" title="DEV/NULL"></a>DEV/NULL</h1><blockquote>
-<p>在LINUX/UNIX中，一般在<em>屏幕</em>上面看到的信息<br>是从STDOUT(STANDARD OUTPUT)或者STDERR(STANDARD ERROR OUTPUT)来的。<br>许多人会问<br>OUTPUT就是 OUTPUT，送到<em>屏幕</em>上不就得了？<br>为什么还要分成STDOUT和STDERR？那是因为通常在SERVER的工作环境下<br><em>几乎所有的程序</em>都是跑在後台的，为了方便DEBUG<br>一般在设计<em>程序</em>时，就把STDOUT送到一个档案，把错误的信息STDERR送到不同的档案。<br>有了上面这些认知後，回头来讲什么是 &gt;/DEV/NULL<br>就是把STDOUT送到/DEV/NULL里面<br>那什么是/DEV/NULL ？<br>/DEV/NULL是UNIX/LINUX里的无底洞<br>OUTPUT送去了就没了</p>
-</blockquote>
+<h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><p><code>() =&gt; ()</code> 是个什么鬼？</p>
+<p>第一眼见到这种写法可能会有点懵，其实就是一个<code>return</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">item =&gt; item * <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>不就是在<code>return</code>的结果上加个<code>()</code>么？</p>
+<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><p><code>return （a, b）</code>是啥意思</p>
+<p>在控制台做几个小测试就会发现，<code>return</code> 只会<em>返回</em>最後一个参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> r1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line">&#125;</span><br><span class="line">r1() <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> r1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">&#125;</span><br><span class="line">r1() <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> r1 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>)</span><br><span class="line">&#125;</span><br><span class="line">r1() <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+<h2 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h2><p>Lodash中为什么要这样写嘞？</p>
+<p><code>baseAssignValue(result, iteratee(value), value), result</code></p>
+<p>先来一个例子说明<code>return</code> <em>返回</em>的是啥？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="number">1</span> + <span class="number">3</span></span><br><span class="line"><span class="comment">//其实相当于把1 + 3的值赋给一个变量，然後return这个变量，即：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span> + <span class="number">3</span></span><br><span class="line"><span class="keyword">return</span> a</span><br></pre></td></tr></table></figure>
+<p>而在<code>keyBy</code>中<code>baseAssignValue</code>的作用是给一个变量添加KEY VALUE，因此我可以简化为下面这样</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (result[key] = value, result)</span><br></pre></td></tr></table></figure>
+<p>如果直接return <code>result[key] = value</code>的话，其实是相当于</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> temp = result[key] = value</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> temp</span><br></pre></td></tr></table></figure>
+<p>也就是是说最终return的值是value，而在<code>reduce</code>函数中，这并不是我们想要的结果</p>
+<h2 id="综上"><a href="#综上" class="headerlink" title="综上"></a>综上</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">keyBy</span>(<span class="params">collection, iteratee</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> reduce(collection, (result, value, key) =&gt; (</span><br><span class="line">    baseAssignValue(result, iteratee(value), value), result</span><br><span class="line">  ), &#123;&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 其实相当于</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">keyBy</span>(<span class="params">collection, iteratee</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> reduce(collection, (result, value, key) =&gt; &#123;</span><br><span class="line">    baseAssignValue(result, iteratee(value), value)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125;, &#123;&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -409,7 +409,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/nginx/" rel="tag"># nginx</a>
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/lodash/" rel="tag"># lodash</a>
           
         </div>
       
@@ -422,8 +424,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/19/Nginx-V/" rel="next" title="Nginx-V">
-                <i class="fa fa-chevron-left"></i> Nginx-V
+              <a href="/2018/04/07/Prototype/" rel="next" title="Prototype分析">
+                <i class="fa fa-chevron-left"></i> Prototype分析
               </a>
             
           </div>
@@ -432,8 +434,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/23/Nginx-Log-Format/" rel="prev" title="Nginx 日志模块">
-                Nginx 日志模块 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/27/POSTCSS/" rel="prev" title="POSTCSS潜在的冲突问题">
+                POSTCSS潜在的冲突问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -636,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-请求"><span class="nav-number">1.</span> <span class="nav-text">HTTP 请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CURL"><span class="nav-number">2.</span> <span class="nav-text">CURL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DEV-NULL"><span class="nav-number">3.</span> <span class="nav-text">DEV/NULL</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">1.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题一"><span class="nav-number">1.1.</span> <span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题二"><span class="nav-number">1.2.</span> <span class="nav-text">问题二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题三"><span class="nav-number">1.3.</span> <span class="nav-text">问题三</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#综上"><span class="nav-number">1.4.</span> <span class="nav-text">综上</span></a></li></ol></li></ol></div>
             
 
           </div>

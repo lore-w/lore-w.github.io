@@ -100,28 +100,28 @@
 
 
   
-  <meta name="keywords" content="nginx," />
+  <meta name="keywords" content="js,POSTCSS," />
 
 
-<meta name="description" content="HTTP 请求 Request包含 请求行、请求头部、请求数据  Response包含 状态行、消息报头、响应正文">
-<meta name="keywords" content="nginx">
+<meta name="description" content="Tips：理解这个问题需要对node_modules文件组织结构有了解 该问题由VUE-CLI中的POSTCSS版本冲突引起，下面记录问题分析的过程 如何复现该问题 在项目中使用POSTCSS 由于项目需求，需要使用一个POSTCSS插件（该插件对POSTCSS的版本要求低于项目中的POSTCSS版本）">
+<meta name="keywords" content="js,POSTCSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx http基础">
-<meta property="og:url" content="http://lore-w.com/2018/03/23/Nginx-Http/index.html">
+<meta property="og:title" content="POSTCSS潜在的冲突问题">
+<meta property="og:url" content="http://lore-w.com/2018/06/27/POSTCSS/index.html">
 <meta property="og:site_name" content="W&#39;s Notes">
-<meta property="og:description" content="HTTP 请求 Request包含 请求行、请求头部、请求数据  Response包含 状态行、消息报头、响应正文">
+<meta property="og:description" content="Tips：理解这个问题需要对node_modules文件组织结构有了解 该问题由VUE-CLI中的POSTCSS版本冲突引起，下面记录问题分析的过程 如何复现该问题 在项目中使用POSTCSS 由于项目需求，需要使用一个POSTCSS插件（该插件对POSTCSS的版本要求低于项目中的POSTCSS版本）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-25T06:07:57.601Z">
+<meta property="og:updated_time" content="2018-06-27T10:24:56.227Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx http基础">
-<meta name="twitter:description" content="HTTP 请求 Request包含 请求行、请求头部、请求数据  Response包含 状态行、消息报头、响应正文">
+<meta name="twitter:title" content="POSTCSS潜在的冲突问题">
+<meta name="twitter:description" content="Tips：理解这个问题需要对node_modules文件组织结构有了解 该问题由VUE-CLI中的POSTCSS版本冲突引起，下面记录问题分析的过程 如何复现该问题 在项目中使用POSTCSS 由于项目需求，需要使用一个POSTCSS插件（该插件对POSTCSS的版本要求低于项目中的POSTCSS版本）">
 
 
 
 
 
 
-  <link rel="canonical" href="http://lore-w.com/2018/03/23/Nginx-Http/"/>
+  <link rel="canonical" href="http://lore-w.com/2018/06/27/POSTCSS/"/>
 
 
 
@@ -130,7 +130,7 @@
     sidebar: "",
   };
 </script>
-  <title>Nginx http基础 | W's Notes</title>
+  <title>POSTCSS潜在的冲突问题 | W's Notes</title>
   
 
 
@@ -286,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2018/03/23/Nginx-Http/">
+    <link itemprop="mainEntityOfPage" href="http://lore-w.com/2018/06/27/POSTCSS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lore-w">
@@ -303,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Nginx http基础</h1>
+          <h1 class="post-title" itemprop="name headline">POSTCSS潜在的冲突问题</h1>
         
 
         <div class="post-meta">
@@ -315,7 +315,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-23T23:06:31+08:00">2018-03-23</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-27T17:14:31+08:00">2018-06-27</time>
             
 
             
@@ -336,7 +336,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/手记/" itemprop="url" rel="index"><span itemprop="name">手记</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/草稿/" itemprop="url" rel="index"><span itemprop="name">草稿</span></a></span>
 
                 
                 
@@ -370,25 +370,48 @@
       
 
       
-        <h1 id="HTTP-请求"><a href="#HTTP-请求" class="headerlink" title="HTTP 请求"></a>HTTP 请求</h1><ul>
-<li><p>Request<br><em>包含 请求行、请求头部、请求数据</em></p>
-</li>
-<li><p>Response<br><em>包含 状态行、消息报头、响应正文</em></p>
-</li>
+        <p>Tips：理解这个问题需要对<code>node_modules</code>文件组织结构有了解</p>
+<p>该问题由VUE-CLI中的POSTCSS版本冲突引起，下面记录问题<em>分析</em>的过程</p>
+<h1 id="如何复现该问题"><a href="#如何复现该问题" class="headerlink" title="如何复现该问题"></a>如何复现该问题</h1><ul>
+<li>在项目中使用POSTCSS</li>
+<li>由于项目需求，需要使用一个POSTCSS插件（该插件对POSTCSS的版本要求低于项目中的POSTCSS版本）</li>
 </ul>
 <a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://lore-w.com</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">$ curl -v https://lore-w.com &gt;/dev/null</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">&gt; GET / HTTP/1.1 <span class="comment"># 请求行</span></span><br><span class="line">&gt; User-Agent: curl/7.29.0</span><br><span class="line">&gt; Host: lore-w.com</span><br><span class="line">&gt; Accept: */*</span><br><span class="line">&gt;</span><br><span class="line">&lt; HTTP/1.1 200 OK <span class="comment"># 状态行</span></span><br><span class="line">&lt; Accept-Ranges: bytes</span><br><span class="line">&lt; Access-Control-Allow-Origin: *</span><br><span class="line">&lt; Cache-Control: max-age=600</span><br><span class="line">&lt; Content-Length: 44514</span><br><span class="line">&lt; Content-Type: text/html; charset=utf-8</span><br><span class="line">&lt; Last-Modified: Sun, 18 Mar 2018 14:07:04 GMT</span><br><span class="line">&lt; Server: Coding Pages</span><br><span class="line">&lt; Vary: Accept-Encoding</span><br><span class="line">&lt; Date: Fri, 23 Mar 2018 15:01:19 GMT</span><br><span class="line">&lt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h1 id="CURL"><a href="#CURL" class="headerlink" title="CURL"></a>CURL</h1><p>CURL相当于我们的浏览器，模拟浏览器向服务端发起请求，只不过不能渲染页面</p>
-<ul>
-<li>-v 显示请求详细信息</li>
-<li>-X 指定请求方式<br><code>curl -X GET https://lore-w.com</code><br><code>curl -X POST -d &quot;name=lore&amp;age=27&quot; https://lore-w.com</code><br>由于-d选项为使用POST方式向server发送请求，因此在使用-d的时候，<br>可以省略-X POST。<br>使用-d时，将使用<code>Content-type:application/x-www-form-urlencoded</code>方式发送<br>如果想使用<code>JSON</code>形式，可以使用-H指定头部类型<br><code>curl -H &quot;Content-Type:application/json&quot; -d &#39;{&quot;name&quot;: &quot;lore&quot;}&#39; ...</code><br>如果想在请求的时候带上Cookie，可以这样<br><code>curl -H &quot;Cookie:username=lore-w&quot; ...</code></li>
-<li>-H 增加头部信息</li>
-<li>-cookie直接指定cookie</li>
-<li>-F 表单提交操作<br>通过-F命令来以<code>Content-Type:multipart/form-data</code>的形式向server post数据，该命令允许提交二进制文件等。可以使用@前缀来制定提交的内容为一个文件，也可以使用&lt;符号来提交文件中的内容<br><code>curl -F img=@lore.jpg https://lore-w.com</code></li>
-</ul>
-<h1 id="DEV-NULL"><a href="#DEV-NULL" class="headerlink" title="DEV/NULL"></a>DEV/NULL</h1><blockquote>
-<p>在LINUX/UNIX中，一般在<em>屏幕</em>上面看到的信息<br>是从STDOUT(STANDARD OUTPUT)或者STDERR(STANDARD ERROR OUTPUT)来的。<br>许多人会问<br>OUTPUT就是 OUTPUT，送到<em>屏幕</em>上不就得了？<br>为什么还要分成STDOUT和STDERR？那是因为通常在SERVER的工作环境下<br><em>几乎所有的程序</em>都是跑在後台的，为了方便DEBUG<br>一般在设计<em>程序</em>时，就把STDOUT送到一个档案，把错误的信息STDERR送到不同的档案。<br>有了上面这些认知後，回头来讲什么是 &gt;/DEV/NULL<br>就是把STDOUT送到/DEV/NULL里面<br>那什么是/DEV/NULL ？<br>/DEV/NULL是UNIX/LINUX里的无底洞<br>OUTPUT送去了就没了</p>
-</blockquote>
+<h1 id="栗子"><a href="#栗子" class="headerlink" title="栗子"></a>栗子</h1><p>之前在一个项目 A 中使用GULP-POSTCSS</p>
+<p>後来有一个新的项目 B ，发现 A 中的大部分代码B项目可以复用</p>
+<p>这时有可能的做法是直接把 A 项目复制一份，或者主要代码复制一份（包含<code>package.json</code>）</p>
+<p>但是有一点区别在于，B 项目要加入一个 A 项目之前没有使用的POSTCSS插件，比如PRECSS</p>
+<p>那只要在新的项目中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save precss</span><br></pre></td></tr></table></figure>
+<p>即可</p>
+<p>一切都是如此的完美和顺利</p>
+<p>.<br>.<br>.<br>.</p>
+<p>但是，我们来分析以下这当中存在的问题</p>
+<p>假设：</p>
+<p>项目 A 中的 <code>gulp-postcss</code> <em>版本</em> 是<code>^6.3.0</code></p>
+<p>而<code>gulp-postcss</code>其实就是把<code>postcss</code>套一个壳，作为GULP的插件使用，因此<code>gulp-postcss</code>中依赖的<code>postcss</code> <em>版本</em> 是<code>^5.2.12</code></p>
+<p>此时在<code>node_modules</code>中文件组织形式如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">node_modules</span><br><span class="line">  //一级目录</span><br><span class="line">  gulp-postcss（^6.3.0）</span><br><span class="line">  postcss（^5.2.12）</span><br></pre></td></tr></table></figure>
+<p>这时我们添加PRECSS插件</p>
+<p>由于PRECSS可能存在多个<em>版本</em>通过<code>install precss --save</code>只会安装到<em>最新</em>的<em>版本</em></p>
+<p>比如<code>^3.1.2</code>，它对<code>postcss</code>的<em>版本</em>依赖是<code>^6.0.19</code></p>
+<p>由于和一级目录的<code>postcss（^5.2.12）</code><em>版本号</em>不同，因此会在<code>precss</code>的目录下安装<code>postcss</code>,此时的目录结构如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">node_modules</span><br><span class="line">  //一级目录</span><br><span class="line">  gulp-postcss（^6.3.0）</span><br><span class="line">  postcss（^5.2.12）</span><br><span class="line">  precss（^3.1.2）</span><br><span class="line">    //二级目录</span><br><span class="line">    postcss（^6.0.19）</span><br></pre></td></tr></table></figure>
+<p>这时运行项目，DUANG DUANG DUANG</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Your current PostCSS version is 5.2.18,</span><br><span class="line"></span><br><span class="line">but precss uses 6.0.21. Perhaps this is the <span class="built_in">source</span> of the error below.</span><br></pre></td></tr></table></figure>
+<p>这个好办，不是告诉我错误信息了吗？我把<code>postcss</code>的<em>版本</em>升级到<code>6.0.21</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install postcss@6.0.21</span><br></pre></td></tr></table></figure>
+<p>好像很有道理</p>
+<p>但是，这样肯定是不行的，这个操作会安装两个<em>版本</em>的<code>postcss</code></p>
+<p>首先，会移除根目录下的<code>postcss（^5.2.12）</code> <code>安装postcss（^6.0.21）</code></p>
+<p>再，在<code>gulp-postcss</code>下安装<code>postcss（^5.2.12）</code></p>
+<p>此时的目录结构如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">node_modules</span><br><span class="line">  //一级目录</span><br><span class="line">  gulp-postcss（^6.3.0）</span><br><span class="line">    //二级目录</span><br><span class="line">    postcss（^5.2.12）</span><br><span class="line">  postcss（^6.0.21）</span><br><span class="line">  precss（^3.1.2）</span><br><span class="line">    //二级目录</span><br><span class="line">    postcss（^6.0.19）</span><br></pre></td></tr></table></figure>
+<p>由于<code>postcss</code>运行时，执行的时<code>gulp-postcss</code>下的<code>postcss</code> <em>代码</em>，问题并没有解决</p>
+<h1 id="NODE-MODULES文件结构简单说明"><a href="#NODE-MODULES文件结构简单说明" class="headerlink" title="NODE_MODULES文件结构简单说明"></a>NODE_MODULES文件结构简单说明</h1><p>如果项目中用到了</p>
+<p><code>gulp-postcss</code> 、<code>press</code>、<code>autoprefixer</code>、<code>postcss-assets</code>、<code>2rem</code></p>
+<p>他们对<code>postcss</code>的依赖分别是<code>^5.2.12</code>、<code>^5.2.10</code>、<code>^5.2.16</code>、<code>^5.2.0</code>、<code>^5.2.16</code></p>
+<p>那么只会在node_modules（<em>新版</em>）的根目录安装一个<code>postcss 5.2.18</code></p>
 
       
     </div>
@@ -409,7 +432,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/nginx/" rel="tag"># nginx</a>
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/POSTCSS/" rel="tag"># POSTCSS</a>
           
         </div>
       
@@ -422,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/19/Nginx-V/" rel="next" title="Nginx-V">
-                <i class="fa fa-chevron-left"></i> Nginx-V
+              <a href="/2018/06/27/keyBy/" rel="next" title="Lodash keyBy分析">
+                <i class="fa fa-chevron-left"></i> Lodash keyBy分析
               </a>
             
           </div>
@@ -431,10 +456,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/23/Nginx-Log-Format/" rel="prev" title="Nginx 日志模块">
-                Nginx 日志模块 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -636,7 +657,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-请求"><span class="nav-number">1.</span> <span class="nav-text">HTTP 请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CURL"><span class="nav-number">2.</span> <span class="nav-text">CURL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DEV-NULL"><span class="nav-number">3.</span> <span class="nav-text">DEV/NULL</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何复现该问题"><span class="nav-number">1.</span> <span class="nav-text">如何复现该问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栗子"><span class="nav-number">2.</span> <span class="nav-text">栗子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NODE-MODULES文件结构简单说明"><span class="nav-number">3.</span> <span class="nav-text">NODE_MODULES文件结构简单说明</span></a></li></ol></div>
             
 
           </div>
